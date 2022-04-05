@@ -23,10 +23,6 @@ class Loads:
         pass
 
 
-class SnakeGame:
-    def __init__(self) -> None:
-        pass
-
 class Snake:
     def __init__(self):
         self.lenght=1
@@ -92,44 +88,52 @@ class Food:
     def check_collision(self):
         pass
 
-def main():
-    pygame.init()
-    clock=pygame.time.Clock()
-    screen=pygame.display.set_mode((SCREEN_W,SCREEN_H),0,32)
+class SnakeGame:
+    def __init__(self) -> None:
+        
+
+        pygame.init()
+        self.clock=pygame.time.Clock()
+        self.screen=pygame.display.set_mode((SCREEN_W,SCREEN_H),0,32)
+
+        self.snake=Snake()
+
+        self.surface=pygame.Surface(self.screen.get_size())
+        self.surface=self.surface.convert()
+        DrawGrid(self.surface)
+
+        self.score_font=pygame.font.SysFont('Ariel', 80)
+        self.score_text=self.score_font.render('Score: '+str(self.snake.score), True, (0,0,0))
+        self.score_box=self.score_text.get_rect()
+        self.game_loop()
     
-    snake=Snake()
-
-    surface=pygame.Surface(screen.get_size())
-    surface=surface.convert()
-    DrawGrid(surface)
-
-    score_font=pygame.font.SysFont('Ariel', 80)
-    score_text=score_font.render('Score: '+str(snake.score), True, (0,0,0))
-    score_box=score_text.get_rect()
-
-    while True:
-        clock.tick(10)
-        for event in pygame.event.get():
-            if event.type==pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            elif event.type==pygame.KEYDOWN:
-                if event.key==pygame.K_LEFT:
-                    snake.turn(LEFT)
-                elif event.key==pygame.K_RIGHT:
-                    snake.turn(RIGHT)
-                elif event.key==pygame.K_UP:
-                    snake.turn(UP)
-                elif event.key==pygame.K_DOWN:
-                    snake.turn(DOWN)
-        
-        
-        DrawGrid(surface)
-        snake.move()
-        snake.draw(surface)
-        screen.blit(surface,(0,0))
-        screen.blit(score_text,score_box)
-        pygame.display.update()
+    def game_loop(self):
+        while True:
+            self.clock.tick(10)
+            for event in pygame.event.get():
+                if event.type==pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                elif event.type==pygame.KEYDOWN:
+                    if event.key==pygame.K_LEFT:
+                        self.snake.turn(LEFT)
+                    elif event.key==pygame.K_RIGHT:
+                        self.snake.turn(RIGHT)
+                    elif event.key==pygame.K_UP:
+                        self.snake.turn(UP)
+                    elif event.key==pygame.K_DOWN:
+                        self.snake.turn(DOWN)
+            
+            
+            DrawGrid(self.surface)
+            self.snake.move()
+            self.snake.draw(self.surface)
+            self.screen.blit(self.surface,(0,0))
+            self.screen.blit(self.score_text,self.score_box)
+            pygame.display.update()
            
-main()
+
+SnakeGame()
+
+    
     
