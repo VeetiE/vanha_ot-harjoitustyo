@@ -76,17 +76,23 @@ def DrawGrid(surface):
 
 class Food:
     def __init__(self):
-        pass
+        random_number=random.randint(0,600)
+        self.pos=[(random_number, random_number)]
+        self.color=(102,205,170)
+        
 
 
     def randomize_pos(self):
         pass
 
-    def draw(self):
-        pass
+    def draw(self, surface):
+        for i in self.pos:
+            r=pygame.Rect((i[0],i[1]), (snake_block_size,snake_block_size))
+            pygame.draw.rect(surface, self.color, r)
+            pygame.draw.rect(surface, (93,216,228), r,1)
 
-    def check_collision(self):
-        pass
+    
+        
 
 class SnakeGame:
     def __init__(self) -> None:
@@ -97,6 +103,7 @@ class SnakeGame:
         self.screen=pygame.display.set_mode((SCREEN_W,SCREEN_H),0,32)
 
         self.snake=Snake()
+        self.food=Food()
 
         self.surface=pygame.Surface(self.screen.get_size())
         self.surface=self.surface.convert()
@@ -106,7 +113,8 @@ class SnakeGame:
         self.score_text=self.score_font.render('Score: '+str(self.snake.score), True, (0,0,0))
         self.score_box=self.score_text.get_rect()
         self.game_loop()
-    
+    def check_collision(self):
+        pass
     def game_loop(self):
         while True:
             self.clock.tick(10)
@@ -128,12 +136,13 @@ class SnakeGame:
             DrawGrid(self.surface)
             self.snake.move()
             self.snake.draw(self.surface)
+            self.food.draw(self.surface)
             self.screen.blit(self.surface,(0,0))
             self.screen.blit(self.score_text,self.score_box)
             pygame.display.update()
            
 
-SnakeGame()
+
 
     
     
