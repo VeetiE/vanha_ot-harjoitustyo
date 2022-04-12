@@ -9,4 +9,5 @@ def coverage_report(ctx):
 
 @task
 def start(ctx):
-    ctx.run("src/entities/SnakeGame.py", pty=True)
+    ctx.run("./index.py", pty=True)
+
