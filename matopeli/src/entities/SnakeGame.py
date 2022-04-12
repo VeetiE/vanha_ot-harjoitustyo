@@ -78,4 +78,5 @@ class SnakeGame:
             self.screen.blit(self.surface, (0, 0))
             self.screen.blit(self.score_text, self.score_box)
             pygame.display.update()
-SnakeGame()
+    def start(self):
+        SnakeGame()
