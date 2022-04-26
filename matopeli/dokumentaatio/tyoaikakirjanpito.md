@@ -9,6 +9,8 @@
 |       | maan                                     | 3    |
 | 12.4  | Korjattiin bugeja ruoassa sekä tehtiin   |      |
 |       | kattavempia testejä                      | 5    |
-|13.4-  | Arvio tunti määrästä 5 viikolla          | 15   |
-|19.4   |                                          |      |
-| yht.  |                                          | 33
+|25.4   | Korjattiin bugeja sekä                   | 3    |
+|26.4   | graafista käyttöliittymää                | 10   |
+|27.4-  | Arvio viikon 6 tuntimäärästä             | 13   |
+| 28.4  |                                          |      |
+| yht.  |                                          | 44   |
