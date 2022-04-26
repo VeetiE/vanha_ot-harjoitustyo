@@ -9,5 +9,5 @@ def coverage_report(ctx):
 
 @task
 def start(ctx):
-    ctx.run("./index.py", pty=True)
+    ctx.run("src/index.py", pty=True)
 

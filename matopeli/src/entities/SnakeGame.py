@@ -1,6 +1,6 @@
 from snake import Snake
 from food import Food
-import pygame
+import pygame, sys
 
 
 def DrawGrid(surface):
@@ -78,5 +78,3 @@ class SnakeGame:
             self.screen.blit(self.surface, (0, 0))
             self.screen.blit(self.score_text, self.score_box)
             pygame.display.update()
-    def start(self):
-        SnakeGame()
