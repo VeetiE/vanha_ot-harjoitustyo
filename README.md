@@ -1,5 +1,5 @@
 # Matopeli
-
+#### Sovelluksessa käyttäjä ohjaa matoa ja yrittää syödä ruokaa. Mato kasvaa ruokaa syödessä. Pelin häviää, jos madon pää törmää omaan kehoonsa. Suunnitelman mukaan sovellukseen tulee vielä graafinen käyttöliittymä sekä sitä voi pelata eri tallennuksilla.
 ## Dokumentaatio
 
 [vaatimusmaarittelyt.md](https://github.com/VeetiE/ot-harjoitustyo/blob/616726f5d6fef61b10c647811b138121b83db6eb/laskarit/viikko1/vaatimusmaarittely.md)
