@@ -1,6 +1,6 @@
 from snake import Snake
 from food import Food
-from StartScreen import MainScreen
+from UI.StartScreen import MainScreen
 import pygame
 import sys
 
