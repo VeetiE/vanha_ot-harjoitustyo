@@ -7,3 +7,5 @@
 #### - Peli alkaa alusta jos madon pää osuu omaan kehoonsa
 ## Viikko 5
 #### - Aloitettiin graafisen käyttöliittymän tekeminen
+## Viikko 6
+#### - Korjattiin ohjelman käynnistämistä estäviä bugeja sekä saatiin taskit toimimaan.

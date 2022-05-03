@@ -11,6 +11,7 @@
 |       | kattavempia testejä                      | 5    |
 |25.4   | Korjattiin bugeja sekä                   | 3    |
 |26.4   | graafista käyttöliittymää                | 10   |
-|27.4-  | Arvio viikon 6 tuntimäärästä             | 13   |
-| 28.4  |                                          |      |
-| yht.  |                                          | 44   |
+|3.5    | Korjattiin bugeja sekä saatiin ohjelman  |  7   |
+|        |  käynnistämisessä                       |      |
+|       | Arvio 7 viikon tunneista                 | 20   |
+|yht.   |                                          | 58   | 

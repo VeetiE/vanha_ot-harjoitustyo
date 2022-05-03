@@ -1,6 +1,8 @@
 from snake import Snake
 from food import Food
-import pygame, sys
+from StartScreen import MainScreen
+import pygame
+import sys
 
 
 def DrawGrid(surface):
@@ -36,10 +38,14 @@ class SnakeGame:
 
         self.snake = Snake()
         self.food = Food()
+        
+        
 
         self.surface = pygame.Surface(self.screen.get_size())
         self.surface = self.surface.convert()
         DrawGrid(self.surface)
+        while False:
+            self.MainScreen
 
         self.game_loop()
 
@@ -78,3 +84,8 @@ class SnakeGame:
             self.screen.blit(self.surface, (0, 0))
             self.screen.blit(self.score_text, self.score_box)
             pygame.display.update()
+
+
+if __name__ == '__main__':
+    s = SnakeGame()
+    s

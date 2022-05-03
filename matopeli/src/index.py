@@ -1,7 +1,13 @@
-from tkinter import Tk
-from entities.SnakeGame import SnakeGame
-def main():
-    game=SnakeGame()
-    game.game_loop()
 
-main()
+from entities.SnakeGame import SnakeGame
+from entities.snake import Snake
+from entities.food import Food
+
+
+def main():
+    SnakeGame()
+
+
+if __name__ == '__main__':
+
+    main()
