@@ -10,3 +10,30 @@
 
 [arkkitehtuuri.md](https://github.com/VeetiE/ot-harjoitustyo/blob/a03e881599c8f1e92613efc0f92ffce00fec8a64/matopeli/dokumentaatio/arkkitehtuuri.md)
 
+## Komentorivitoiminnot
+
+### Ohjelman suorittaminen
+
+Ohjelman pystyy suorittamaan komennolla:
+
+```bash
+poetry run invoke start
+```
+
+Testit suoritetaan komennolla:
+
+```bash
+poetry run invoke test
+```
+
+Testikattavuusraportin voi generoida komennolla:
+
+```bash
+poetry run invoke coverage-report
+```
+
+Tiedoston pylint tarkistukset voidaan suorittaa komennolla:
+
+```bash
+poetry run invoke lint
+```
