@@ -5,8 +5,6 @@ import pygame
 import sys
 
 
-
-
 def DrawGrid(surface):
     snake_block_size = 30
     grid_size = 600/snake_block_size
@@ -27,7 +25,7 @@ class SnakeGame:
         self.screen_w = 600
         self.screen_h = 600
         self.snake_block_size = 30
-        self.playing=False
+        self.playing = False
 
         self.left = (-1, 0)
         self.right = (1, 0)
@@ -41,16 +39,15 @@ class SnakeGame:
 
         self.snake = Snake()
         self.food = Food()
-        self.menu=Menu()
-        
-        
+        self.menu = Menu()
 
         self.surface = pygame.Surface(self.screen.get_size())
         self.surface = self.surface.convert()
         self.game_loop()
+
     def draw(self):
 
-        if self.playing==True:
+        if self.playing == True:
 
             DrawGrid(self.surface)
             self.snake.move()
@@ -64,11 +61,11 @@ class SnakeGame:
             self.screen.blit(self.score_text, self.score_box)
         else:
             self.menu.draw()
-            
+
         pygame.display.update()
 
     def game_loop(self):
-        
+
         while True:
             self.clock.tick(10)
             if self.playing:
@@ -91,9 +88,9 @@ class SnakeGame:
                     if event.type == pygame.QUIT:
                         pygame.quit()
                         sys.exit()
-                    elif event.type ==pygame.KEYDOWN:
+                    elif event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_SPACE:
-                            self.playing=True
+                            self.playing = True
 
             if self.snake.find_head() == self.food.pos:
                 self.snake.score += 1
@@ -101,8 +98,11 @@ class SnakeGame:
                 self.food.randomize_pos()
 
             self.draw()
+
+
 def main():
     SnakeGame()
+
 
 if __name__ == '__main__':
     main()

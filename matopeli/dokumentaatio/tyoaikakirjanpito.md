@@ -13,5 +13,8 @@
 |26.4   | graafista käyttöliittymää                | 10   |
 |3.5    | Korjattiin bugeja sekä saatiin ohjelman  |  7   |
 |        |  käynnistämisessä                       |      |
-|       | Arvio 7 viikon tunneista                 | 20   |
-|yht.   |                                          | 58   | 
+|13.5   | Työstettiin käyttöliittymää              | 3    |
+| 14.5  | Luotiin database sekä saatiin sille      |      |
+|       | tarvittava toimivuus                     | 5    |
+| 15.5  | Viimeisteltiin käyttöliittymä            | 10   |
+|yht.   |                                          | 56   | 

@@ -6,14 +6,13 @@ from datetime import date
 
 class Snake:
     def __init__(self):
-        self.db=get_database_connection()
+        self.db = get_database_connection()
         self.screen_size = 600
         self.snake_block_size = 30
-        self.day=date.today().day
-        self.month=date.today().month
-        self.year=date.today().year
+        self.day = date.today().day
+        self.month = date.today().month
+        self.year = date.today().year
 
-        
         self.left = (-1, 0)
         self.right = (1, 0)
         self.down = (0, 1)
@@ -34,7 +33,8 @@ class Snake:
         new = (((current[0]+(x*self.snake_block_size)) % self.screen_size),
                (current[1]+(y*self.snake_block_size)) % self.screen_size)
         if len(self.pos) > 2 and new in self.pos[2:]:
-            self.db.execute(f'INSERT INTO Users VALUES ({self.score}, {self.day}, {self.month}, {self.year});')
+            self.db.execute(
+                f'INSERT INTO Users VALUES ({self.score}, {self.day}, {self.month}, {self.year});')
             self.new_game()
         else:
 

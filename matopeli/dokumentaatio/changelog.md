@@ -9,3 +9,5 @@
 #### - Aloitettiin graafisen käyttöliittymän tekeminen
 ## Viikko 6
 #### - Korjattiin ohjelman käynnistämistä estäviä bugeja sekä saatiin taskit toimimaan.
+## Viikko 7
+#### - Luotiin database sekä viimeisteltiin käyttöliittymä

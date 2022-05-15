@@ -7,6 +7,7 @@ def drop_tables(db):
         drop table if exists users;
     """)
 
+
 def create_tables(db):
 
     db.execute("""
@@ -26,7 +27,6 @@ def create_tables(db):
             0
         );
     """)
-
 
 
 def initialize_database():
