@@ -10,6 +10,26 @@
 
 [arkkitehtuuri.md](https://github.com/VeetiE/ot-harjoitustyo/blob/a03e881599c8f1e92613efc0f92ffce00fec8a64/matopeli/dokumentaatio/arkkitehtuuri.md)
 
+## Asennus
+
+Asenna riippuvuudet komennolla:
+
+```bash
+poetry install
+```
+
+Suorita vaadittavat alustustoimenpiteet komennolla:
+
+```bash
+poetry run invoke build
+```
+
+Käynnistä sovellus komennolla:
+
+```bash
+poetry run invoke start
+```
+
 ## Komentorivitoiminnot
 
 ### Ohjelman suorittaminen
