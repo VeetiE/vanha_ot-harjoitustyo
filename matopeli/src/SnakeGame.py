@@ -1,8 +1,10 @@
-from snake import Snake
-from food import Food
-from UI.StartScreen import MainScreen
+from entities.snake import Snake
+from entities.food import Food
+from UI.Menu import Menu
 import pygame
 import sys
+
+
 
 
 def DrawGrid(surface):
@@ -25,6 +27,7 @@ class SnakeGame:
         self.screen_w = 600
         self.screen_h = 600
         self.snake_block_size = 30
+        self.playing=False
 
         self.left = (-1, 0)
         self.right = (1, 0)
@@ -38,40 +41,16 @@ class SnakeGame:
 
         self.snake = Snake()
         self.food = Food()
+        self.menu=Menu()
         
         
 
         self.surface = pygame.Surface(self.screen.get_size())
         self.surface = self.surface.convert()
-        DrawGrid(self.surface)
-        while False:
-            self.MainScreen
-
         self.game_loop()
+    def draw(self):
 
-    def game_loop(self):
-        while True:
-            self.clock.tick(10)
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_LEFT:
-                        self.snake.turn(self.left)
-                    elif event.key == pygame.K_RIGHT:
-                        self.snake.turn(self.right)
-                    elif event.key == pygame.K_UP:
-                        self.snake.turn(self.up)
-                    elif event.key == pygame.K_DOWN:
-                        self.snake.turn(self.down)
-
-            if self.snake.find_head() == self.food.pos:
-
-                self.snake.score += 1
-                self.snake.lenght += 1
-                self.food.randomize_pos()
+        if self.playing==True:
 
             DrawGrid(self.surface)
             self.snake.move()
@@ -83,9 +62,47 @@ class SnakeGame:
             self.score_box = self.score_text.get_rect()
             self.screen.blit(self.surface, (0, 0))
             self.screen.blit(self.score_text, self.score_box)
-            pygame.display.update()
+        else:
+            self.menu.draw()
+            
+        pygame.display.update()
 
+    def game_loop(self):
+        
+        while True:
+            self.clock.tick(10)
+            if self.playing:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                        sys.exit()
+
+                    elif event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_LEFT:
+                            self.snake.turn(self.left)
+                        elif event.key == pygame.K_RIGHT:
+                            self.snake.turn(self.right)
+                        elif event.key == pygame.K_UP:
+                            self.snake.turn(self.up)
+                        elif event.key == pygame.K_DOWN:
+                            self.snake.turn(self.down)
+            else:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                        sys.exit()
+                    elif event.type ==pygame.KEYDOWN:
+                        if event.key == pygame.K_SPACE:
+                            self.playing=True
+
+            if self.snake.find_head() == self.food.pos:
+                self.snake.score += 1
+                self.snake.lenght += 1
+                self.food.randomize_pos()
+
+            self.draw()
+def main():
+    SnakeGame()
 
 if __name__ == '__main__':
-    s = SnakeGame()
-    s
+    main()
